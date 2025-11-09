@@ -1,0 +1,33 @@
+---
+import {type TestimonialCard} from "../../../interfaces/interfaces";
+
+interface Props {
+    testimonial: TestimonialCard
+}
+
+const {testimonial} = Astro.props
+
+---
+
+ <div class:list={[
+    "bg-gray-50 p-6 rounded-xl shadow-lg border-t-4",
+    {"border-pink-500": testimonial.color === "pink"},
+    {"border-indigo-500": testimonial.color === "indigo"},
+    {"border-green-500": testimonial.color === "green"},
+ ]}>
+    <blockquote class="text-gray-600 italic">
+        {testimonial.quote}
+    </blockquote>
+    <div class="mt-4 flex items-center">
+        <img class="h-10 w-10 rounded-full object-cover" src={testimonial.imageUrl} alt={`Photo of ${testimonial.name}`}>
+        <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">{testimonial.name}</p>
+            <p class:list={[
+                "text-sm",
+                {"text-pink-600": testimonial.color === "pink"},
+                {"text-indigo-600": testimonial.color === "indigo"},
+                {"text-green-600": testimonial.color === "green"},
+            ]}>{testimonial.role}</p>
+        </div>
+    </div>
+</div>
