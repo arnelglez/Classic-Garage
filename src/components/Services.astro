@@ -1,0 +1,29 @@
+---
+import { services } from "../const/service";
+import ServiceCard from "./ui/service/ServiceCard.astro";
+---
+
+<section id="services" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Title and Subtitle -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">
+                Explore Our Auto Repair <span class="text-indigo-600">Services</span>
+            </h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                Find the perfect service to keep your vehicle running smoothly.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+            {
+                services.map((service) => (
+                    <ServiceCard service={service} />
+                ))
+            }
+
+        </div>
+    </div>
+</section>
