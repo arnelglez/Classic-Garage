@@ -1,0 +1,26 @@
+---
+import Form from "./ui/contact/Form.astro";
+import Map from "./ui/contact/Map.astro";
+---
+
+<section id="contact" class="py-16 sm:py-24 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Title and Subtitle -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                Find Us & <span class="text-indigo-400">Contact Us</span>
+            </h2>
+            <p class="mt-4 text-xl text-indigo-200 max-w-2xl mx-auto">
+                We are ready to help you find the perfect service for your vehicle.
+            </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+
+            <!-- MAP AND INFO (Your component structure integrated) -->
+            <Map />
+
+            <Form />
+        </div>
+    </div>
+</section>
