@@ -1,0 +1,26 @@
+---
+
+const address = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.828556637372!2d-118.25684699999999!3d34.05223459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75a401c1c1f%3A0xc392e92c10b7b13!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1716947000000!5m2!1sen!2sus";
+
+---
+
+<div class="flex flex-col items-center justify-between p-4 bg-indigo-800/20 rounded-xl shadow-2xl order-1 lg:order-1 min-h-[400px]">
+                
+    <!-- Map Embed (Using a generic auto shop location) -->
+    <iframe
+        class="h-full w-full rounded-lg mb-4"
+        src={address}
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    
+    <!-- CTA and Info -->
+    <div class="w-full text-center">
+        <a href="tel:+1-555-AUTO-FIX" class="flex items-center justify-center w-full h-10 text-white font-extrabold text-base uppercase bg-indigo-600 rounded-lg hover:bg-indigo-700 transition mb-2">
+            CALL NOW: (555) AUTO-FIX
+        </a>
+        <h3 class="text-white text-sm text-center px-5 uppercase opacity-80">We will respond to all online inquiries within the next 24 hours.</h3>
+    </div>
+</div>
