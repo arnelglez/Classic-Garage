@@ -1,0 +1,51 @@
+---
+import { menus } from "../const/menu";
+import Hero from "./Hero.astro";
+---
+
+<header class="relative bg-gray-900 overflow-hidden">
+        
+    <!-- Background Image and Overlay -->
+    <div class="absolute inset-0">
+        <!-- Placeholder Image: Replace with a real image of a clean auto shop bay -->
+        <img src="/images/banner.webp" 
+                class="w-full h-full object-cover opacity-90 transition duration-300 ease-in-out hover:opacity-80" 
+                alt="Image of a clean auto shop bay with a car being serviced">
+        
+        <!-- Dark overlay for improved text readability -->
+        <div class="absolute inset-0 bg-gray-900 mix-blend-multiply opacity-40"></div>
+    </div>
+
+    <!-- Main Header Content -->
+    <div class="relative max-w-7xl mx-auto">
+        
+        <!-- Navigation Bar -->
+        <nav class="flex items-center justify-between p-4 sm:p-6 lg:px-8" aria-label="Global">
+            <!-- Logo -->
+            <div class="shrink-0">
+                <a href="#" class="text-2xl font-extrabold tracking-tight text-white transition duration-200 hover:text-indigo-400">
+                    Precision Auto Repair
+                </a>
+            </div>
+            
+            <!-- Nav Links -->
+            <div class="hidden sm:flex sm:gap-x-12">
+                {menus.map((menu) => (
+                    <a href={menu.href} class="text-sm font-semibold leading-6 text-white transition duration-200 hover:text-indigo-400">{menu.title}</a>
+                ))}
+            </div>
+            
+            
+            <!-- Mobile Menu Icon -->
+            <button type="button" class="sm:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 hover:text-white transition duration-200">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Hero Main Content -->
+        <Hero />
+    </div>
+</header>
